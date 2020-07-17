@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/Warframe_relics.rb'
+
+WarframeRelics::CLI.new.call
