@@ -1,4 +1,4 @@
-require "Warframe_relics/version"
+require_relative "./Warframe_relics/version"
 
 module WarframeRelics
   class Error < StandardError; end
