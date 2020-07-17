@@ -23,7 +23,7 @@ PLATFORMS
 DEPENDENCIES
   Warframe_relics!
   pry
-  rake (~> 12.0)
+  rake (~> 12.3.3)
 
 BUNDLED WITH
    2.1.4
