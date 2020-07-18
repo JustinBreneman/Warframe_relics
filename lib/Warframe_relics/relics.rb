@@ -1,0 +1,2 @@
+class WarframeRelics::Relics
+end
