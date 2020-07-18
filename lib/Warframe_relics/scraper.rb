@@ -1,0 +1,2 @@
+class WarframeRelics::Scraper
+end
