@@ -28,4 +28,8 @@ class WarframeRelics::Scraper
         end
         drop_table
     end
+
+    def vault_status(url)
+        vault_status = Nokogiri::HTML(open(url)).css("#mw-content-text").first.css("aside section div div div").first.text
+    end
 end
