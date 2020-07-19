@@ -1,5 +1,5 @@
 class WarframeRelics::Scraper
-    def relic_info
+    def self.relic_info
         relic_info = []
         
         Nokogiri::HTML(open("https://warframe.fandom.com/wiki/Void_Relic/ByRelic")).css(".mw-content-text .article-table tr").each do |relic|
@@ -10,7 +10,7 @@ class WarframeRelics::Scraper
         relic_info
     end
 
-    def relic_drop_table(url)
+    def self.relic_drop_table(url)
         drop_table = []
 
         counter = 0
@@ -29,7 +29,7 @@ class WarframeRelics::Scraper
         drop_table
     end
 
-    def vault_status(url)
+    def self.vault_status(url)
         vault_status = Nokogiri::HTML(open(url)).css("#mw-content-text").first.css("aside section div div div").first.text
     end
 end
