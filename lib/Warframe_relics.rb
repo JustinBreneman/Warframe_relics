@@ -1,3 +1,6 @@
+require 'nokogiri'
+require 'open-uri'
+require 'pry'
 require_relative "./Warframe_relics/version"
 require_relative "./Warframe_relics/cli"
 require_relative "./Warframe_relics/relics"
