@@ -32,4 +32,12 @@ class WarframeRelics::Scraper
         drop_table
     end
 
+    def self.vaulted_relics
+        vault_info = []
+         
+        Nokogiri::HTML(open("https://warframe.fandom.com/wiki/Void_Relic")).css("#mw-customcollapsible-VaultedRelicList tr td ul li span a").each do |relic| 
+            vault_info << relic.values
+        end
+        vault_info
+    end
 end
