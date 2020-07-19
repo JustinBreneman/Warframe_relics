@@ -47,7 +47,7 @@ class WarframeRelics::Relics
                 if relic.name == relic_name
                     @@vaulted << relic
                 else
-                    @@un_vaulted << rellic
+                    @@un_vaulted << relic
                 end
             end
         end
