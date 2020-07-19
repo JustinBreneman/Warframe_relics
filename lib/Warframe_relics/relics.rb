@@ -12,19 +12,19 @@ class WarframeRelics::Relics
         @url = url
     end
 
-    def all_unsorted
+    def self.all_unsorted
         @@all_unsorted
     end
 
-    def all_sorted
-        @@all_unsorted
+    def self.all_sorted
+        @@all_sorted
     end
 
-    def vaulted
+    def self.vaulted
         @@vaulted
     end
 
-    def un_vaulted
+    def self.un_vaulted
         @@un_vaulted
     end
 
