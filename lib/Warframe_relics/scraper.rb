@@ -32,10 +32,4 @@ class WarframeRelics::Scraper
         drop_table
     end
 
-    def self.vault_status(url)
-        site = "https://warframe.fandom.com"
-        relic_site = site << url
-
-        vault_status = Nokogiri::HTML(open(relic_site)).css("#mw-content-text").first.css("aside section div div div").first.text
-    end
 end
