@@ -37,4 +37,19 @@ class WarframeRelics::Relics
         end
     end
 
+    def self.sort_relics
+        vaulted_relic_names = []
+        WarframeRelics::Scraper.vaulted_relics.each do |relic_array|
+            vaulted_relic_names << relic_array[1]
+        end
+        @@all_unsorted.each do |relic|
+            vaulted_relic_names.each do |relic_name|
+                if relic.name == relic_name
+                    @@vaulted << relic
+                else
+                    @@un_vaulted << rellic
+                end
+            end
+        end
+    end
 end
