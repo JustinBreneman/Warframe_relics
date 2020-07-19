@@ -1,6 +1,6 @@
 class WarframeRelics::Relics
     
-    attr_accessor :name, :url, :drop_table
+    attr_accessor :name, :url, :drop_table, :vault_status
     
     @@all_unsorted = []
     @@vaulted = []
