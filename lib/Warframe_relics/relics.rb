@@ -37,10 +37,4 @@ class WarframeRelics::Relics
         end
     end
 
-    def self.update_all_relics
-        @@all_unsorted.each do |relic|
-            relic.drop_table = WarframeRelics::Scraper.relic_drop_table(relic.url)
-            relic.vault_status = WarframeRelics::Scraper.vault_status(relic.url)
-        end
-    end
 end
