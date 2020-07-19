@@ -13,11 +13,14 @@ class WarframeRelics::Scraper
     def self.relic_drop_table(url)
         drop_table = []
 
+        site = "https://warframe.fandom.com"
+        relic_site = site << url
+
         counter = 0
         
-        Nokogiri::HTML(open(url)).css("#mw-content-text table#72656C6963table tr").each do |a|
+        Nokogiri::HTML(open(relic_site)).css("#mw-content-text table#72656C6963table tr").each do |a|
             if counter == 6
-                exit
+                break
             else
                 if a.css("td").first != nil && a.css("td").first.css("a").last != nil
                     b = a.css("td").first.css("a").last.text
@@ -30,6 +33,9 @@ class WarframeRelics::Scraper
     end
 
     def self.vault_status(url)
-        vault_status = Nokogiri::HTML(open(url)).css("#mw-content-text").first.css("aside section div div div").first.text
+        site = "https://warframe.fandom.com"
+        relic_site = site << url
+
+        vault_status = Nokogiri::HTML(open(relic_site)).css("#mw-content-text").first.css("aside section div div div").first.text
     end
 end
