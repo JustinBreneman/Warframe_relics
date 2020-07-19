@@ -4,8 +4,8 @@ class WarframeRelics::Relics
     
     @@all_unsorted = []
     @@vaulted = []
-    @@un-vaulted = []
-    @@all_sorted = [@@vaulted, @@un-vaulted]
+    @@un_vaulted = []
+    @@all_sorted = [@@vaulted, @@un_vaulted]
     
     def initialize(name, url)
         @name = name
