@@ -22,10 +22,9 @@ class WarframeRelics::Scraper
     def relic_drop_table(url)
         drop_table = []
 
-        srp = Nokogiri::HTML(open(url)).css("#mw-content-text table#72656C6963table tr")
-        
         counter = 0
-        srp.each do |a|
+        
+        Nokogiri::HTML(open(url)).css("#mw-content-text table#72656C6963table tr").each do |a|
             if counter == 6
                 exit
             else
