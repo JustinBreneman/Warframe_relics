@@ -35,6 +35,6 @@ class WarframeRelics::Scraper
                 end
             end
         end
-
+        drop_table
     end
 end
