@@ -52,4 +52,8 @@ class WarframeRelics::Relics
             end
         end
     end
+
+    def self.find_by_name(name)
+        self.all_unsorted.find{|relic| relic.name == name}
+    end
 end
