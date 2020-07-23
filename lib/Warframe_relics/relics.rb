@@ -12,6 +12,12 @@ class WarframeRelics::Relics
         @url = url
     end
 
+    def self.clear
+        @@all_unsorted.clear
+        @@vaulted.clear
+        @@un_vaulted.clear
+    end
+
     def self.all_unsorted
         @@all_unsorted.uniq
     end
