@@ -54,7 +54,7 @@ class WarframeRelics::Relics
     end
 
     def self.find_by_name(name)
-        self.all_unsorted.find{|relic| relic.name == name}
+        self.all_unsorted.find{|relic| relic.name.downcase == name.downcase}
     end
 
     def self.get_drop_table(relic_name)
