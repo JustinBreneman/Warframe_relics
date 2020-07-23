@@ -49,13 +49,15 @@ class WarframeRelics::Relics
             vaulted_relic_names << relic_array[1]
         end
         @@all_unsorted.each do |relic|
+            @@un_vaulted << relic
             vaulted_relic_names.each do |relic_name|
                 if relic.name == relic_name
                     @@vaulted << relic
-                else
-                    @@un_vaulted << relic
                 end
             end
+        end
+        @@vaulted.each do |relic|
+            @@un_vaulted.delete(relic)
         end
     end
 
