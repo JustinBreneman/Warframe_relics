@@ -12,15 +12,18 @@ class WarframeRelics::CLI
             puts "What information would you like?"
             input = gets.chomp
             if input.downcase == 'vaulted'
-                WarframeRelics::Relics.vaulted
+                WarframeRelics::Relics.vaulted.each {|relic| puts "#{relic.name}"}
             elsif input.downcase == 'available'
-                WarframeRelics::Relics.un_vaulted
+                WarframeRelics::Relics.un_vaulted.each {|relic| puts "#{relic.name}"}
             elsif input.downcase == 'all'
-                WarframeRelics::Relics.all_sorted
+                puts "Vaulted:"
+                WarframeRelics::Relics.vaulted.each {|relic| puts "#{relic.name}"}
+                puts "Available:"
+                WarframeRelics::Relics.un_vaulted.each {|relic| puts "#{relic.name}"}
             elsif input.downcase == 'exit'
                 puts "Goodbye."
             else
-                WarframeRelics::Relics.get_drop_table(input)
+                WarframeRelics::Relics.get_drop_table(input).each {|item| puts "#{item}"}
             end
         end
     end
