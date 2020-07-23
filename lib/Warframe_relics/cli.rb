@@ -22,6 +22,7 @@ class WarframeRelics::CLI
                 WarframeRelics::Relics.un_vaulted.each {|relic| puts "#{relic.name}"}
             elsif input.downcase == 'exit'
                 puts "Goodbye."
+                WarframeRelics::Relics.clear
             else
                 WarframeRelics::Relics.get_drop_table(input).each {|item| puts "#{item}"}
             end
