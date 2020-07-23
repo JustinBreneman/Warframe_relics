@@ -56,4 +56,9 @@ class WarframeRelics::Relics
     def self.find_by_name(name)
         self.all_unsorted.find{|relic| relic.name == name}
     end
+
+    def self.get_drop_table(relic_name)
+        relic = self.find_by_name(relic_name)
+        drop_table = WarframeRelics::Scraper.relic_drop_table(relic.url)
+    end
 end
