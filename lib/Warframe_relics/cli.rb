@@ -19,5 +19,6 @@ class WarframeRelics::CLI
             WarframeRelics::Relics.all_sorted
         else
             WarframeRelics::Relics.get_drop_table(input)
+        end
     end
 end
