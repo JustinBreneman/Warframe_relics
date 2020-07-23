@@ -13,19 +13,19 @@ class WarframeRelics::Relics
     end
 
     def self.all_unsorted
-        @@all_unsorted
+        @@all_unsorted.uniq
     end
 
     def self.all_sorted
-        @@all_sorted
+        @@all_sorted.uniq
     end
 
     def self.vaulted
-        @@vaulted
+        @@vaulted.uniq
     end
 
     def self.un_vaulted
-        @@un_vaulted
+        @@un_vaulted.uniq
     end
 
     def self.get_all_relics
