@@ -1,8 +1,6 @@
 # WarframeRelics
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Warframe_relics`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the Warframe Relic gem. This gem will provide access to a current list of relics, sorted into vaulted and available. You can also use this gem to access the drop tables for each relic.
 
 ## Installation
 
