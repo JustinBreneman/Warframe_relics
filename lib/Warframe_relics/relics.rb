@@ -36,9 +36,7 @@ class WarframeRelics::Relics
 
     def self.get_all_relics
         WarframeRelics::Scraper.relic_info.each do |relic_array|
-            name = relic_array[1]
-            url = relic_array[0]
-            relic = self.new(name, url)
+            relic = self.new(relic_array[1], relic_array[0])
             @@all_unsorted << relic
         end
     end
