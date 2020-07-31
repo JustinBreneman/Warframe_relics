@@ -65,11 +65,13 @@ class WarframeRelics::Relics
 
     def self.get_drop_table(relic_name)
         relic = self.find_by_name(relic_name)
-        drop_table = WarframeRelics::Scraper.relic_drop_table(relic.url)
-        if @@vaulted.include? relic
-            drop_table << "Vaulted"
-        else
-            drop_table << "Available"
+        if relic != nil
+            drop_table = WarframeRelics::Scraper.relic_drop_table(relic.url)
+            if @@vaulted.include? relic
+                drop_table << "Vaulted"
+            else
+                drop_table << "Available"
+            end
         end
     end
 end
