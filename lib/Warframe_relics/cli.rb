@@ -34,10 +34,14 @@ class WarframeRelics::CLI
             elsif input.downcase == 'exit'
                 puts "Goodbye."
                 WarframeRelics::Relics.clear
-            else
+            elsif WarframeRelics::Relics.get_drop_table(input) != nil
                 puts "---"
                 WarframeRelics::Relics.get_drop_table(input).each {|item| puts "#{item}"}
                 puts "---"
+            else
+                puts " "
+                puts "That is not a valid list or relic."
+                puts "Please make a new selection"
             end
         end
     end
