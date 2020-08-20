@@ -42,10 +42,9 @@ class WarframeRelics::Relics
     end
 
     def self.sort_relics
-        vaulted_relic_names = []
-        WarframeRelics::Scraper.vaulted_relics.each do |relic_array|
-            vaulted_relic_names << relic_array[1]
-        end
+        vaulted_relic_names = WarframeRelics::Scraper.vaulted_relics.map do |relic_array|
+            relic_array[1]
+        end.compact
         @@all_unsorted.each do |relic|
             @@un_vaulted << relic
             vaulted_relic_names.each do |relic_name|
