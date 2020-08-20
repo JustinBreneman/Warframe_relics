@@ -1,13 +1,10 @@
 class WarframeRelics::Scraper
     def self.relic_info
-        relic_info = []
-        
-        Nokogiri::HTML(open("https://warframe.fandom.com/wiki/Void_Relic/ByRelic")).css(".mw-content-text .article-table tr").each do |relic|
+        Nokogiri::HTML(open("https://warframe.fandom.com/wiki/Void_Relic/ByRelic")).css(".mw-content-text .article-table tr").map do |relic|
             if relic.css("td a").first != nil
-                relic_info << relic.css("td a").first.values
+                relic.css("td a").first.values
             end
-        end
-        relic_info
+        end.compact
     end
 
     def self.relic_drop_table(url)
@@ -33,11 +30,8 @@ class WarframeRelics::Scraper
     end
 
     def self.vaulted_relics
-        vault_info = []
-         
-        Nokogiri::HTML(open("https://warframe.fandom.com/wiki/Void_Relic")).css("#mw-customcollapsible-VaultedRelicList tr td ul li span a").each do |relic| 
-            vault_info << relic.values
+        Nokogiri::HTML(open("https://warframe.fandom.com/wiki/Void_Relic")).css("#mw-customcollapsible-VaultedRelicList tr td ul li span a").map do |relic| 
+            relic.values
         end
-        vault_info
     end
 end
